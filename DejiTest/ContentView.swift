@@ -21,7 +21,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("My App")
+            .navigationTitle("My App..")
         }
     }
 }
