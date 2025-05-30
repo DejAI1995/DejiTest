@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    let items = ["SwiftUI", "Navigation", "Detail Views", "Lists"]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!!!...")
+        NavigationStack {
+            List(items, id: \.self) { item in
+                NavigationLink(destination: DetailView(title: item)) {
+                    HStack {
+                        Image(systemName: "arrow.right.circle")
+                            .foregroundStyle(.tint)
+                        Text(item)
+                    }
+                }
+            }
+            .navigationTitle("My App")
         }
-        .padding()
     }
 }
 
